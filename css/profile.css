@@ -1,31 +1,31 @@
 /* Base Styles */
 :root {
-  --spotify-black: #121212;
-  --spotify-dark-gray: #181818;
-  --spotify-gray: #282828;
-  --spotify-light-gray: #b3b3b3;
-  --spotify-green: #1db954;
-  --spotify-green-hover: #1ed760;
+  --spotify-black: #1a001a;
+  --spotify-dark-gray: #2b002b;
+  --spotify-gray: #3f003f;
+  --spotify-light-gray: #b380b3;
+  --spotify-green: #a32cc4;
+  --spotify-green-hover: #c43ce8;
   --spotify-white: #ffffff;
   --spotify-text: #ffffff;
-  --spotify-text-secondary: #b3b3b3;
-  --spotify-border: #333333;
+  --spotify-text-secondary: #b380b3;
+  --spotify-border: #4d004d;
   --spotify-shadow: rgba(0, 0, 0, 0.3);
   --transition-speed: 0.3s;
   --transition-speed-fast: 0.15s;
 }
 
 .light-mode {
-  --spotify-black: #f8f8f8;
+  --spotify-black: #f5e6f7;
   --spotify-dark-gray: #ffffff;
-  --spotify-gray: #eeeeee;
-  --spotify-light-gray: #666666;
-  --spotify-green: #1db954;
-  --spotify-green-hover: #1ed760;
+  --spotify-gray: #e0cce5;
+  --spotify-light-gray: #7a3b7a;
+  --spotify-green: #a32cc4;
+  --spotify-green-hover: #c43ce8;
   --spotify-white: #000000;
   --spotify-text: #000000;
-  --spotify-text-secondary: #666666;
-  --spotify-border: #dddddd;
+  --spotify-text-secondary: #7a3b7a;
+  --spotify-border: #d9b3e6;
   --spotify-shadow: rgba(0, 0, 0, 0.1);
 }
 
