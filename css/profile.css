@@ -1,0 +1,314 @@
+/* Base Styles */
+:root {
+  --spotify-black: #121212;
+  --spotify-dark-gray: #181818;
+  --spotify-gray: #282828;
+  --spotify-light-gray: #b3b3b3;
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+  --spotify-white: #ffffff;
+  --spotify-text: #ffffff;
+  --spotify-text-secondary: #b3b3b3;
+  --spotify-border: #333333;
+  --spotify-shadow: rgba(0, 0, 0, 0.3);
+  --transition-speed: 0.3s;
+  --transition-speed-fast: 0.15s;
+}
+
+.light-mode {
+  --spotify-black: #f8f8f8;
+  --spotify-dark-gray: #ffffff;
+  --spotify-gray: #eeeeee;
+  --spotify-light-gray: #666666;
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+  --spotify-white: #000000;
+  --spotify-text: #000000;
+  --spotify-text-secondary: #666666;
+  --spotify-border: #dddddd;
+  --spotify-shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--spotify-black);
+  color: var(--spotify-text);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Spotify-style Buttons */
+.spotify-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 500px; /* Spotify uses very rounded buttons */
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-speed-fast);
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.primary-btn {
+  background-color: var(--spotify-green);
+  color: var(--spotify-black);
+}
+
+.primary-btn:hover {
+  background-color: var(--spotify-green-hover);
+  transform: scale(1.04);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--spotify-text);
+  border: 1px solid var(--spotify-text-secondary);
+}
+
+.secondary-btn:hover {
+  border-color: var(--spotify-text);
+  transform: scale(1.04);
+}
+
+.spotify-btn i {
+  margin-right: 8px;
+}
+
+/* Back Button */
+.back-button {
+  margin-bottom: 20px;
+}
+
+/* Theme Toggle */
+.theme-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--spotify-text);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color var(--transition-speed-fast);
+}
+
+#theme-toggle:hover {
+  color: var(--spotify-green);
+}
+
+/* Artist Title */
+.artist-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.artist-title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--spotify-text);
+}
+
+/* Artist Wrapper */
+.artist-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .artist-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .artist-concerts {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Artist Profile */
+.artist-profile {
+  background-color: var(--spotify-dark-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--spotify-shadow);
+  transition: transform var(--transition-speed);
+}
+
+.artist-profile:hover {
+  transform: translateY(-5px);
+}
+
+.artist-profile__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Artist Info */
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background-color: var(--spotify-dark-gray);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--spotify-shadow);
+}
+
+.info-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--spotify-green);
+  display: flex;
+  align-items: center;
+}
+
+.info-card h3 i {
+  margin-right: 10px;
+}
+
+.info-card p {
+  color: var(--spotify-text);
+  font-size: 1.1rem;
+}
+
+.members-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.members-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--spotify-border);
+  color: var(--spotify-text);
+}
+
+.members-list li:last-child {
+  border-bottom: none;
+}
+
+/* Concert Information */
+.artist-concerts {
+  background-color: var(--spotify-dark-gray);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 12px var(--spotify-shadow);
+}
+
+.artist-concerts h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--spotify-green);
+  display: flex;
+  align-items: center;
+}
+
+.artist-concerts h2 i {
+  margin-right: 10px;
+}
+
+.concerts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.concert-location {
+  background-color: var(--spotify-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform var(--transition-speed-fast);
+}
+
+.concert-location:hover {
+  transform: translateY(-3px);
+}
+
+.location-header {
+  padding: 15px;
+  border-bottom: 1px solid var(--spotify-border);
+}
+
+.location-toggle {
+  display: flex;
+  align-items: center;
+  color: var(--spotify-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed-fast);
+}
+
+.location-toggle:hover {
+  color: var(--spotify-green);
+}
+
+.location-toggle i {
+  margin-right: 10px;
+  transition: transform var(--transition-speed-fast);
+}
+
+.location-toggle:hover i {
+  transform: rotate(-180deg);
+}
+
+.concert-dates {
+  padding: 15px;
+}
+
+.concert-dates ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.concert-dates li {
+  padding: 8px 0;
+  color: var(--spotify-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.concert-dates li i {
+  margin-right: 10px;
+  color: var(--spotify-green);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .artist-title h1 {
+    font-size: 2rem;
+  }
+
+  .concerts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-toggle-container {
+    top: 10px;
+    right: 10px;
+  }
+}
+

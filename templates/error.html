@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      font-family: Arial, Helvetica, sans-serif;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .error-container {
+      text-align: center;
+      border-radius: 10px;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 5em;
+      margin: 0;
+      color: #1d829e;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2b93d4;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      background-color: #1e97a092;
+    }
+  </style>
+  <title>{{.ErrNumber}}</title>
+</head>
+
+<body>
+  <div class="error-container">
+    <h1>{{.ErrNumber}}</h1>
+    <p>{{.Err}}</p>
+    <a href="../" id="go-back-link">Go Back</a>
+  </div>
+</body>
+
+</html>

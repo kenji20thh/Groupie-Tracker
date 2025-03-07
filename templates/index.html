@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groupie Tracker</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <div class="logo">
+          <a href="index.html">Groupie Tracker</a>
+        </div>
+
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search artists...">
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <button id="theme-toggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <form id="mobile-search-form">
+          <input type="text" id="mobile-search-input" placeholder="Search artists...">
+          <button type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <a href="index.html" class="active">Home</a>
+        <button id="mobile-theme-toggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="content-wrapper">
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar" id="filter-sidebar">
+        <div class="filter-header">
+          <h2>Filters</h2>
+          <button class="close-filter" id="close-filter">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Creation Date Range Filter -->
+        <div class="filter-group">
+          <h3>Creation Date</h3>
+          <div class="range-slider">
+            <div class="range-values">
+              <span id="creation-min-value">1950</span>
+              <span id="creation-max-value">2023</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="creation-min" min="1950" max="2023" value="1950" class="slider">
+              <input type="range" id="creation-max" min="1950" max="2023" value="2023" class="slider">
+            </div>
+            <div class="slider-card-container">
+              <div class="slider-card" id="creation-slider-card">
+                <img src="https://via.placeholder.com/100x60" alt="Creation date visual" class="slider-card-img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- First Album Date Range Filter -->
+        <div class="filter-group">
+          <h3>First Album Date</h3>
+          <div class="range-slider">
+            <div class="range-values">
+              <span id="album-min-value">1950</span>
+              <span id="album-max-value">2023</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="album-min" min="1950" max="2023" value="1950" class="slider">
+              <input type="range" id="album-max" min="1950" max="2023" value="2023" class="slider">
+            </div>
+            <div class="slider-card-container">
+              <div class="slider-card" id="album-slider-card">
+                <img src="https://via.placeholder.com/100x60" alt="Album date visual" class="slider-card-img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number of Members Checkbox Filter -->
+        <div class="filter-group">
+          <h3>Number of Members</h3>
+          <div class="checkbox-grid">
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-1" value="1">
+              <label for="member-1">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">1</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-2" value="2">
+              <label for="member-2">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">2</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-3" value="3">
+              <label for="member-3">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">3</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-4" value="4">
+              <label for="member-4">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">4</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-5" value="5">
+              <label for="member-5">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">5</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-6" value="6">
+              <label for="member-6">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">6</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-7" value="7">
+              <label for="member-7">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">7</span>
+              </label>
+            </div>
+            <div class="spotify-checkbox">
+              <input type="checkbox" id="member-8" value="8">
+              <label for="member-8">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">8+</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Locations Checkbox Filter -->
+        <div class="filter-group">
+          <h3>Locations</h3>
+          <div class="locations-container" id="locations-container">
+            <p class="loading-text">Loading locations...</p>
+          </div>
+        </div>
+
+        <!-- Filter Actions -->
+        <div class="filter-actions">
+          <button id="apply-filters" class="spotify-btn primary-btn">Apply</button>
+          <button id="reset-filters" class="spotify-btn secondary-btn">Reset</button>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <div class="content-header">
+          <h1>Artists</h1>
+          <button id="show-filter-btn" class="spotify-btn primary-btn">
+            <i class="fas fa-filter"></i>
+            Filters
+          </button>
+        </div>
+
+        <!-- Artist Grid as Ordered List -->
+        <ol class="artist-grid" id="artist-grid">
+
+
+          {{ range . }}
+          <li class="artist-card" data-id="{{.ID}}">
+            <a href="/artist/{{.ID}}" class="artist-card-link">
+              <div class="artist-image">
+                <img src="{{.Image}}" alt="{{.Name}}">
+                <div class="play-overlay">
+                  <button class="play-btn">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="artist-info">
+                <h2 class="artist-name">{{.Name}}</h2>
+                <div class="artist-meta">
+                  <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span class="creation-date">Since {{.CreationDate}}</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="fas fa-users"></i>
+                    <span class="member-count">{{len .Members}}</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="location-count">{{len .LocationsApi}}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          {{ end }}
+        </ol>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="no-results hidden">
+          <h2>No artists found</h2>
+          <p>Try adjusting your filters or search query</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Artist Detail Modal -->
+  <div id="artist-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="artist-detail-content" class="artist-detail-content">
+        <!-- Artist details will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Templates -->
+  <template id="artist-card-template">
+    <li class="artist-card" data-id="">
+      <a href="#" class="artist-card-link">
+        <div class="artist-image">
+          <img src="/placeholder.svg" alt="">
+          <div class="play-overlay">
+            <button class="play-btn">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+        </div>
+        <div class="artist-info">
+          <h2 class="artist-name"></h2>
+          <div class="artist-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span class="creation-date"></span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-users"></i>
+              <span class="member-count"></span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span class="location-count"></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+  </template>
+
+  <template id="location-checkbox-template">
+    <div class="spotify-checkbox">
+      <input type="checkbox" id="" value="">
+      <label for="">
+        <span class="checkbox-custom"></span>
+        <span class="checkbox-label"></span>
+      </label>
+    </div>
+  </template>
+
+  <script src="../js/main.js">
+
+  </script>
+</body>
+
+</html>
