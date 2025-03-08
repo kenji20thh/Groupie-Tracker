@@ -9,35 +9,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-black: #1a001a;
-      --color-dark-gray: #2b002b;
-      --color-gray: #3f003f;
-      --color-light-gray: #b380b3;
-      --color-green: #a32cc4;
-      --color-green-hover: #c43ce8;
-      --color-white: #ffffff;
-      --color-text: #ffffff;
-      --color-text-secondary: #b380b3;
-      --color-border: #4d004d;
-      --color-shadow: rgba(0, 0, 0, 0.3);
+      --colr-black: #1a001a;
+      --colr-dark-gray: #2b002b;
+      --colr-gray: #3f003f;
+      --colr-light-gray: #b380b3;
+      --colr-green: #a32cc4;
+      --colr-green-hover: #c43ce8;
+      --colr-white: #ffffff;
+      --colr-text: #ffffff;
+      --colr-text-secondary: #b380b3;
+      --colr-border: #4d004d;
+      --colr-shadow: rgba(0, 0, 0, 0.3);
       --transition-speed: 0.3s;
       --transition-speed-fast: 0.15s;
     }
 
     .light-mode {
-      --color-black: #f5e6f7;
-      --color-dark-gray: #ffffff;
-      --color-gray: #e0cce5;
-      --color-light-gray: #7a3b7a;
-      --color-green: #a32cc4;
-      --color-green-hover: #c43ce8;
-      --color-white: #000000;
-      --color-text: #000000;
-      --color-text-secondary: #7a3b7a;
-      --color-border: #d9b3e6;
-      --color-shadow: rgba(0, 0, 0, 0.1);
+      --colr-black: #f5e6f7;
+      --colr-dark-gray: #ffffff;
+      --colr-gray: #e0cce5;
+      --colr-light-gray: #7a3b7a;
+      --colr-green: #a32cc4;
+      --colr-green-hover: #c43ce8;
+      --colr-white: #000000;
+      --colr-text: #000000;
+      --colr-text-secondary: #7a3b7a;
+      --colr-border: #d9b3e6;
+      --colr-shadow: rgba(0, 0, 0, 0.1);
     }
-
 
 
     * {
@@ -48,8 +47,8 @@
 
     body {
       font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--spotify-black);
-      color: var(--spotify-text);
+      background-color: var(--colr-black);
+      color: var(--colr-text);
       line-height: 1.6;
       transition: background-color var(--transition-speed), color var(--transition-speed);
       display: flex;
@@ -63,8 +62,8 @@
       text-align: center;
       border-radius: 10px;
       padding: 40px;
-      background-color: var(--spotify-dark-gray);
-      box-shadow: 0 4px 15px var(--spotify-shadow);
+      background-color: var(--colr-dark-gray);
+      box-shadow: 0 4px 15px var(--colr-shadow);
       max-width: 500px;
       width: 90%;
       transition: background-color var(--transition-speed);
@@ -73,14 +72,14 @@
     h1 {
       font-size: 6em;
       margin: 0;
-      color: var(--spotify-green);
+      color: var(--colr-green);
       font-weight: 700;
     }
 
     p {
       font-size: 1.2em;
       margin-top: 15px;
-      color: var(--spotify-text);
+      color: var(--colr-text);
       font-weight: 500;
     }
 
@@ -88,8 +87,8 @@
       display: inline-block;
       margin-top: 30px;
       padding: 12px 32px;
-      background-color: var(--spotify-green);
-      color: var(--spotify-black);
+      background-color: var(--colr-green);
+      color: var(--colr-black);
       text-decoration: none;
       border-radius: 500px;
       font-weight: 700;
@@ -100,7 +99,7 @@
     }
 
     a:hover {
-      background-color: var(--spotify-green-hover);
+      background-color: var(--colr-green-hover);
       transform: scale(1.04);
     }
 
@@ -110,14 +109,14 @@
       right: 20px;
       background: none;
       border: none;
-      color: var(--spotify-text);
+      color: var(--colr-text);
       cursor: pointer;
       font-size: 1.2rem;
       transition: color var(--transition-speed-fast);
     }
 
     .theme-toggle:hover {
-      color: var(--spotify-green);
+      color: var(--colr-green);
     }
   </style>
   <title>{{.ErrNumber}}</title>

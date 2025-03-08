@@ -1,32 +1,32 @@
 /* Base Styles */
 :root {
-  --color-black: #1a001a;
-  --color-dark-gray: #2b002b;
-  --color-gray: #3f003f;
-  --color-light-gray: #b380b3;
-  --color-green: #a32cc4;
-  --color-green-hover: #c43ce8;
-  --color-white: #ffffff;
-  --color-text: #ffffff;
-  --color-text-secondary: #b380b3;
-  --color-border: #4d004d;
-  --color-shadow: rgba(0, 0, 0, 0.3);
+  --col-black: #1a001a;
+  --col-dark-gray: #2b002b;
+  --col-gray: #3f003f;
+  --col-light-gray: #b380b3;
+  --col-green: #a32cc4;
+  --col-green-hover: #c43ce8;
+  --col-white: #ffffff;
+  --col-text: #ffffff;
+  --col-text-secondary: #b380b3;
+  --col-border: #4d004d;
+  --col-shadow: rgba(0, 0, 0, 0.3);
   --transition-speed: 0.3s;
   --transition-speed-fast: 0.15s;
 }
 
 .light-mode {
-  --color-black: #f5e6f7;
-  --color-dark-gray: #ffffff;
-  --color-gray: #e0cce5;
-  --color-light-gray: #7a3b7a;
-  --color-green: #a32cc4;
-  --color-green-hover: #c43ce8;
-  --color-white: #000000;
-  --color-text: #000000;
-  --color-text-secondary: #7a3b7a;
-  --color-border: #d9b3e6;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --col-black: #f5e6f7;
+  --col-dark-gray: #ffffff;
+  --col-gray: #e0cce5;
+  --col-light-gray: #7a3b7a;
+  --col-green: #a32cc4;
+  --col-green-hover: #c43ce8;
+  --col-white: #000000;
+  --col-text: #000000;
+  --col-text-secondary: #7a3b7a;
+  --col-border: #d9b3e6;
+  --col-shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -37,8 +37,8 @@
 
 body {
   font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--color-black);
-  color: var(--color-text);
+  background-color: var(--col-black);
+  color: var(--col-text);
   line-height: 1.6;
   transition: background-color var(--transition-speed), color var(--transition-speed);
   padding: 20px;
@@ -52,8 +52,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  border-radius: 500px;
-  /* Spotify uses very rounded buttons */
+  border-radius: 500px; /* Spotify uses very rounded buttons */
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.1em;
@@ -66,23 +65,23 @@ body {
 }
 
 .primary-btn {
-  background-color: var(--color-green);
-  color: var(--color-black);
+  background-color: var(--col-green);
+  color: var(--col-black);
 }
 
 .primary-btn:hover {
-  background-color: var(--color-green-hover);
+  background-color: var(--col-green-hover);
   transform: scale(1.04);
 }
 
 .secondary-btn {
   background-color: transparent;
-  color: var(--color-text);
-  border: 1px solid var(--color-text-secondary);
+  color: var(--col-text);
+  border: 1px solid var(--col-text-secondary);
 }
 
 .secondary-btn:hover {
-  border-color: var(--color-text);
+  border-color: var(--col-text);
   transform: scale(1.04);
 }
 
@@ -105,14 +104,14 @@ body {
 #theme-toggle {
   background: none;
   border: none;
-  color: var(--color-text);
+  color: var(--col-text);
   cursor: pointer;
   font-size: 1.2rem;
   transition: color var(--transition-speed-fast);
 }
 
 #theme-toggle:hover {
-  color: var(--color-green);
+  color: var(--col-green);
 }
 
 /* Artist Title */
@@ -124,7 +123,7 @@ body {
 .artist-title h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--col-text);
 }
 
 /* Artist Wrapper */
@@ -146,10 +145,10 @@ body {
 
 /* Artist Profile */
 .artist-profile {
-  background-color: var(--color-dark-gray);
+  background-color: var(--col-dark-gray);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px var(--color-shadow);
+  box-shadow: 0 4px 12px var(--col-shadow);
   transition: transform var(--transition-speed);
 }
 
@@ -172,17 +171,17 @@ body {
 }
 
 .info-card {
-  background-color: var(--color-dark-gray);
+  background-color: var(--col-dark-gray);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 12px var(--color-shadow);
+  box-shadow: 0 4px 12px var(--col-shadow);
 }
 
 .info-card h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--color-green);
+  color: var(--col-green);
   display: flex;
   align-items: center;
 }
@@ -192,7 +191,7 @@ body {
 }
 
 .info-card p {
-  color: var(--color-text);
+  color: var(--col-text);
   font-size: 1.1rem;
 }
 
@@ -203,8 +202,8 @@ body {
 
 .members-list li {
   padding: 8px 0;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text);
+  border-bottom: 1px solid var(--col-border);
+  color: var(--col-text);
 }
 
 .members-list li:last-child {
@@ -213,17 +212,17 @@ body {
 
 /* Concert Information */
 .artist-concerts {
-  background-color: var(--color-dark-gray);
+  background-color: var(--col-dark-gray);
   border-radius: 8px;
   padding: 25px;
-  box-shadow: 0 4px 12px var(--color-shadow);
+  box-shadow: 0 4px 12px var(--col-shadow);
 }
 
 .artist-concerts h2 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--color-green);
+  color: var(--col-green);
   display: flex;
   align-items: center;
 }
@@ -239,7 +238,7 @@ body {
 }
 
 .concert-location {
-  background-color: var(--color-gray);
+  background-color: var(--col-gray);
   border-radius: 8px;
   overflow: hidden;
   transition: transform var(--transition-speed-fast);
@@ -251,20 +250,20 @@ body {
 
 .location-header {
   padding: 15px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--col-border);
 }
 
 .location-toggle {
   display: flex;
   align-items: center;
-  color: var(--color-text);
+  color: var(--col-text);
   text-decoration: none;
   font-weight: 600;
   transition: color var(--transition-speed-fast);
 }
 
 .location-toggle:hover {
-  color: var(--color-green);
+  color: var(--col-green);
 }
 
 .location-toggle i {
@@ -287,14 +286,14 @@ body {
 
 .concert-dates li {
   padding: 8px 0;
-  color: var(--color-text-secondary);
+  color: var(--col-text-secondary);
   display: flex;
   align-items: center;
 }
 
 .concert-dates li i {
   margin-right: 10px;
-  color: var(--color-green);
+  color: var(--col-green);
 }
 
 /* Responsive Adjustments */
@@ -312,3 +311,4 @@ body {
     right: 10px;
   }
 }
+
