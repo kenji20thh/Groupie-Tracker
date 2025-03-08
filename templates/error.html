@@ -1,64 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      display: flex;
-      font-family: Arial, Helvetica, sans-serif;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spotify-black: #121212;
+            --spotify-dark-gray: #181818;
+            --spotify-gray: #282828;
+            --spotify-light-gray: #b3b3b3;
+            --spotify-green: #1DB954;
+            --spotify-green-hover: #1ed760;
+            --spotify-white: #FFFFFF;
+            --spotify-text: #FFFFFF;
+            --spotify-text-secondary: #b3b3b3;
+            --spotify-border: #333333;
+            --spotify-shadow: rgba(0, 0, 0, 0.3);
+            --transition-speed: 0.3s;
+            --transition-speed-fast: 0.15s;
+        }
 
-    .error-container {
-      text-align: center;
-      border-radius: 10px;
-      padding: 40px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        .light-mode {
+            --spotify-black: #f8f8f8;
+            --spotify-dark-gray: #ffffff;
+            --spotify-gray: #eeeeee;
+            --spotify-light-gray: #666666;
+            --spotify-green: #1DB954;
+            --spotify-green-hover: #1ed760;
+            --spotify-white: #000000;
+            --spotify-text: #000000;
+            --spotify-text-secondary: #666666;
+            --spotify-border: #dddddd;
+            --spotify-shadow: rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-      font-size: 5em;
-      margin: 0;
-      color: #1d829e;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    p {
-      font-size: 1.2em;
-      margin-top: 5px;
-      color: #555;
-    }
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--spotify-black);
+            color: var(--spotify-text);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #2b93d4;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+        .error-container {
+            text-align: center;
+            border-radius: 10px;
+            padding: 40px;
+            background-color: var(--spotify-dark-gray);
+            box-shadow: 0 4px 15px var(--spotify-shadow);
+            max-width: 500px;
+            width: 90%;
+            transition: background-color var(--transition-speed);
+        }
 
-    a:hover {
-      background-color: #1e97a092;
-    }
-  </style>
-  <title>{{.ErrNumber}}</title>
+        h1 {
+            font-size: 6em;
+            margin: 0;
+            color: var(--spotify-green);
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            color: var(--spotify-text);
+            font-weight: 500;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 32px;
+            background-color: var(--spotify-green);
+            color: var(--spotify-black);
+            text-decoration: none;
+            border-radius: 500px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all var(--transition-speed-fast);
+        }
+
+        a:hover {
+            background-color: var(--spotify-green-hover);
+            transform: scale(1.04);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--spotify-text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color var(--transition-speed-fast);
+        }
+
+        .theme-toggle:hover {
+            color: var(--spotify-green);
+        }
+    </style>
+    <title>{{.ErrNumber}}</title>
 </head>
+<body class="dark-mode">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-sun"></i>
+    </button>
 
-<body>
-  <div class="error-container">
-    <h1>{{.ErrNumber}}</h1>
-    <p>{{.Err}}</p>
-    <a href="../" id="go-back-link">Go Back</a>
-  </div>
+    <div class="error-container">
+        <h1>{{.ErrNumber}}</h1>
+        <p>{{.Err}}</p>
+        <a href="../" id="go-back-link">Go Back Home</a>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Initialize theme
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'light') {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                updateThemeIcon(false);
+            } else if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+                updateThemeIcon(true);
+            }
+        });
+        
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = body.classList.contains('dark-mode');
+            
+            if (isDarkMode) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcon(false);
+            } else {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcon(true);
+            }
+        });
+        
+        // Update theme icon
+        function updateThemeIcon(isDarkMode) {
+            const themeIcon = themeToggle.querySelector('i');
+            
+            if (isDarkMode) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+    </script>
 </body>
-
 </html>
