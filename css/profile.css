@@ -47,7 +47,7 @@ body {
 }
 
 /* Spotify-style Buttons */
-.all-btn {
+.spotify-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +85,7 @@ body {
   transform: scale(1.04);
 }
 
-.all-btn i {
+.spotify-btn i {
   margin-right: 8px;
 }
 
