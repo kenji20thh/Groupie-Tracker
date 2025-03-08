@@ -61,7 +61,7 @@ func (serv *Server) JsHandler(Writer http.ResponseWriter, Request *http.Request)
 	if Request.Method != http.MethodGet || Request.URL.Path == "/js/" {
 		renderErrorPage(Writer, "Access Forbiden!", http.StatusForbidden)
 		return
-	} else if Request.URL.Path != "/js/main.js" && Request.URL.Path != "/js/artist.js" {
+	} else if Request.URL.Path != "/js/main.js" && Request.URL.Path != "/js/artist.js"  && Request.URL.Path != "/js/filter.js"{
 		renderErrorPage(Writer, "NOT FOUND", http.StatusNotFound)
 		return
 	}
